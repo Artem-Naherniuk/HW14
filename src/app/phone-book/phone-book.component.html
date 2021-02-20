@@ -1,6 +1,6 @@
 <div class="container">
     <div class="inputs">
-        <input id="inp" type="text" placeholder="Search text goes here" [(ngModel)]="search" name="search" (keydown)="check()">
+        <input id="inp" type="text" placeholder="Search text goes here" [(ngModel)]="search" name="search" (keyup)="check()">
         <button id="add" (click)="add()">Add Contact</button>
     </div>
     <table class="allTable">
