@@ -44,10 +44,13 @@ td, th{
     justify-content: center;
     align-items: center;
 }
+td{
+    font-size: 15px;
+}
 
 .alerCreate, .alertEdit{
-    width: 450px;
-    height: 350px;
+    width: 35%;
+    height: 30%;
     background-color: white;
     border: 1px solid #000;
     border-radius: 10px;
@@ -56,22 +59,22 @@ td, th{
     align-items: center;
     flex-flow: column;
     position: absolute;
-    top: 25%;
-    left: 32%;
-    /* visibility: hidden; */
+    top: center;
+    left: 32.5%;
+    visibility: hidden;
 }
 
 .addContact{
-    width: 300px;
+    width: 60%;
     height: 35px;
-    border: 1px solid #000;
+    border: 0.5px solid #000;
     border-radius: 5px;
 }
 
 #addFinal, #finalEdit{
     width: 70px;
-    height: 30px;
-    border: 1px solid #000;
+    height: 35px;
+    border: 0.5px solid #000;
     background-color: rgb(63, 205, 50);
     border-radius: 5px;
 }
@@ -80,7 +83,7 @@ td, th{
     width: 50px;
     height: 30px;
     background-color: orange;
-    border: 1px solid #000;
+    border: 0.5px solid #000;
     border-radius: 5px;
 }
 
@@ -88,7 +91,7 @@ td, th{
     width: 50px;
     height: 30px;
     background-color: red;
-    border: 1px solid #000;
+    border: 0.5px solid #000;
     border-radius: 5px;
 }
 

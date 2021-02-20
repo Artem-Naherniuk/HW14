@@ -24,6 +24,8 @@ export class PhoneBookComponent implements OnInit {
 
   search: string;
 
+  disableButtons: boolean;
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -78,5 +80,14 @@ export class PhoneBookComponent implements OnInit {
     this.fN = '';
     this.lN = '';
     this.pN = '';
+  }
+
+  check(): void{
+    if(this.search == ''){
+      this.disableButtons = false;
+    }
+    else{
+      this.disableButtons = true;
+    }
   }
 }

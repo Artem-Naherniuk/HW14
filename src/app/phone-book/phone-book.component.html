@@ -1,6 +1,6 @@
 <div class="container">
     <div class="inputs">
-        <input id="inp" type="text" placeholder="Search text goes here" [(ngModel)]="search" name="search">
+        <input id="inp" type="text" placeholder="Search text goes here" [(ngModel)]="search" name="search" (keydown)="check()">
         <button id="add" (click)="add()">Add Contact</button>
     </div>
     <table class="allTable">
@@ -16,8 +16,8 @@
             <td>{{all.fName}}</td>
             <td>{{all.lName}}</td>
             <td>{{all.phoneN}}</td>
-            <td><button id="edit" (click)="edit(i)">Edit</button></td>
-            <td><button id="delete" (click)="delete(i)">Delete</button></td>
+            <td><button id="edit" (click)="edit(i)" [disabled]="disableButtons">Edit</button></td>
+            <td><button id="delete" (click)="delete(i)" [disabled]="disableButtons">Delete</button></td>
         </tr>
         
     </table>
