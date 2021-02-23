@@ -95,3 +95,29 @@ td{
     border-radius: 5px;
 }
 
+.erorAlert{
+    width: 30%;
+    height: 100px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    position: relative;
+    top: center;
+    left: 35%;
+}
+
+#erorText{
+    margin-bottom: 20px;
+}
+
+#close{
+    width: 80px;
+    height: 25px;
+    background-color: rgb(63, 205, 50);
+    border: 1px solid #000;
+    border-radius: 5px;
+}

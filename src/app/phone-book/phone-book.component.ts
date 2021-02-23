@@ -26,6 +26,9 @@ export class PhoneBookComponent implements OnInit {
 
   disableButtons: boolean;
 
+  visibleAlertEror: boolean;
+
+
   constructor() { }
 
   ngOnInit(): void { }
@@ -35,25 +38,32 @@ export class PhoneBookComponent implements OnInit {
   }
 
   addFinal(): void {
+    if (this.fN == undefined || this.lN == undefined || this.pN == undefined) {
+      this.visibleAlertEror = true;
+    }
+    else if (this.fN == '' || this.lN == '' || this.pN == '') {
+      this.visibleAlertEror = true;
+    }
+    else {
+      let oneContact = {
+        fName: this.fN,
+        lName: this.lN,
+        phoneN: this.pN
+      }
+
+      this.allContacts.push(oneContact);
+
+      oneContact = {
+        fName: '',
+        lName: '',
+        phoneN: ''
+      }
+
+      this.fN = '';
+      this.lN = '';
+      this.pN = '';
+    }
     this.visibleCreate = false;
-
-    let oneContact= {
-      fName: this.fN,
-      lName: this.lN,
-      phoneN: this.pN
-    }
-
-    this.allContacts.push(oneContact);
-    
-    oneContact= {
-      fName: '',
-      lName: '',
-      phoneN: ''
-    }
-
-    this.fN = '';
-    this.lN = '';
-    this.pN = '';
   }
 
   delete(index: number): void {
@@ -72,7 +82,7 @@ export class PhoneBookComponent implements OnInit {
   finalEdit(): void {
     this.visibleEdit = false;
     let obj = this.allContacts[this.nowIndex];
-    
+
     obj.fName = this.fNedit;
     obj.lName = this.lNedit;
     obj.phoneN = this.pNedit;
@@ -82,12 +92,16 @@ export class PhoneBookComponent implements OnInit {
     this.pN = '';
   }
 
-  check(): void{
-    if(this.search == ''){
+  check(): void {
+    if (this.search == '') {
       this.disableButtons = false;
     }
-    else{
+    else {
       this.disableButtons = true;
     }
+  }
+
+  close(): void {
+    this.visibleAlertEror = false;
   }
 }

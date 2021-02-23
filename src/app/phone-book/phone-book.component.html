@@ -34,3 +34,9 @@
     <input class="addContact" type="text" placeholder="Phone number" [(ngModel)]="pNedit" name="pNedit">
 <button id="finalEdit" (click)="finalEdit()">Edit</button>
 </div>
+
+<div class="erorAlert" [style.visibility]="visibleAlertEror ? 'visible' : 'hidden'">
+    <span id="erorText">One of inputs is empty</span>
+    <button id="close" (click)="close()">Close</button>
+</div>
+
